@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  get 'cleaners/new'
+  resources :cleaners
+  get 'companies/new'
+  resources :companies
+  get 'home_pages/home'
+    root :to => "home_pages#home"
+  resources :admins
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signout', to: 'sessions#destroy', via: 'delete'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
