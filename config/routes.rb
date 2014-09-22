@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :events
+
   get 'cleaners/new'
   resources :cleaners
   get 'companies/new'
