@@ -19,9 +19,12 @@
 $(document).ready(function() {
 
     // page is now ready, initialize the calendar...
-
+	var url = window.location.pathname;
+	var id = url.substring(url.lastIndexOf('/')+1); 
     $('#calendar').fullCalendar({
-    		events: '/events.json'
+    		eventSources: [{
+    			url: '/companies/'+id
+    		}]
         // put your options and callbacks here
     });
 
