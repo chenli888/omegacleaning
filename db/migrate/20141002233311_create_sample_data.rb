@@ -28,17 +28,15 @@ class CreateSampleData < ActiveRecord::Migration
     'cleaner',
     'two'
     );")
-    execute("insert into Events(company_id, title, start_time, end_time, start_hour, end_hour) values(
+    execute("insert into Events(company_id, start_time, end_time, start_hour, end_hour) values(
     1,
-    'event1',
     '2014-10-04 18:00:00.000000',
     '2014-10-04 20:00:00.000000',
     7,
     9
     );")
-    execute("insert into Events(company_id, title, start_time, end_time, start_hour, end_hour) values(
+    execute("insert into Events(company_id, start_time, end_time, start_hour, end_hour) values(
     2,
-    'event2',
     '2014-10-04 19:00:00.000000',
     '2014-10-04 23:00:00.000000',
     8,

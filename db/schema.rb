@@ -52,8 +52,6 @@ ActiveRecord::Schema.define(version: 20141002233311) do
 
   create_table "events", force: true do |t|
     t.integer  "company_id"
-    t.string   "title"
-    t.text     "description"
     t.datetime "start_time"
     t.datetime "end_time"
     t.integer  "start_hour"
