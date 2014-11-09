@@ -1,34 +1,67 @@
-<nav role="navigation" style="border: 1px solid transparent;min-height: 50px;background: rgba(0, 0, 51, 0.9);position: fixed;right: 0;left: 0;top: 0;">
-	<div style="padding-right: 15px">
-		<ul class="nav navbar-right topnav" style="margin-top: 0px;">
+
+
+
+<body>
+
+<nav role="navigation" style="border: 1px solid transparent;min-height: 50px;background: rgb(37, 76, 98);position: absolute;right: 0;left: 0;top: 0;">
+
+	<%= link_to (image_tag("omega.png", :style=>"width:65px;height:52px;position: absolute;right: 0;left: 0;top: 0;")), root_path %>
+
+	<%= link_to (image_tag("omegatext.png", :style=>"width:204px;height:49px;float:left;padding: 0 0 0 70px")), root_path %>
+
+	<div style="padding-right: 0px">
+
+		<ul class="nav navbar-right topnav" style="margin-top: 0px;list-style:none;">
+			
 			<% if signed_in? %>
 			<li style="float:right;padding: 0 15px 0 0">
-					<%= link_to "Edit Profile", "#", :style => "padding:10px 15px;font-family: verdana, arial, helvetica, sans-serif;font-size: 13px;font-weight: bold;color: #f2f2f2;text-decoration: none !important;" %>
+					<%= link_to "EDIT PROFILE", "#", :style => "padding:10px 15px;font-family: futura;font-size: 13px;font-weight: bold;color: #e6bc3d;text-decoration: none !important;" %>
 			</li>
 			<li style="float:right;padding: 0 15px 0 0">
-					<%= link_to "Sign out", signout_path,:method => :delete, :style => "padding:10px 15px;font-family: verdana, arial, helvetica, sans-serif;font-size: 13px;font-weight: bold;color: #f2f2f2;text-decoration: none !important;" %>
+					<%= link_to "SIGN OUT", signout_path,:method => :delete, :style => "padding:10px 15px;font-family: futura;font-size: 13px;font-weight: bold;color: #e6bc3d;text-decoration: none !important;" %>
 			</li>
+			
 			<% else %>
-			<li style="float:right;padding: 0 15px 0 0">
-					<%= link_to "Sign in", new_session_path, :style => "padding:10px 15px;font-family: verdana, arial, helvetica, sans-serif;font-size: 13px;font-weight: bold;color: #f2f2f2;text-decoration: none !important;" %>
+			<li  style="float:right;padding: 0 15px 0 0">
+					<%= link_to "SIGN IN", new_session_path, :style => "padding:10px 15px;font-family: futura;font-size: 13px;font-weight: bold;color: #e6bc3d;text-decoration: none !important;" %>
+	
 			</li>
+			
+				
 			<% end %>
-			<li style="float:right;padding: 0 15px 0 0">
-					<%= link_to "New Cleaner", new_cleaner_path, :style => "padding:10px 15px;font-family: verdana, arial, helvetica, sans-serif;font-size: 13px;font-weight: bold;color: #f2f2f2;text-decoration: none !important;" %>
+			<li  style="float:right;padding: 0 15px 0 0">
+					<%= link_to "NEW CLEANER", new_cleaner_path,  :style => "padding:10px 15px;font-family: futura;font-size: 13px;font-weight: bold;color: #e6bc3d;text-decoration: none !important;" %>
+			
 			</li>
+			
+
 			<% if show_new_company_item? %>
 			<li style="float:right;padding: 0 15px 0 0">
-					<%= link_to "New Company", new_company_path, :style => "padding:10px 15px;font-family: verdana, arial, helvetica, sans-serif;font-size: 13px;font-weight: bold;color: #f2f2f2;text-decoration: none !important;" %>
+					<%= link_to "NEW COMPANY", new_company_path, :style => "padding:10px 15px;font-family: futura;font-size: 13px;font-weight: bold;color: #e6bc3d;text-decoration: none !important;" %>
 			</li>
 			<% end %>
 			<% if show_new_cleaner_item? %>
 			<li style="float:right;padding: 0 15px 0 0">
-				<%= link_to "My Cleaners", "#", :style => "padding:10px 15px;font-family: verdana, arial, helvetica, sans-serif;font-size: 13px;font-weight: bold;color: #f2f2f2;text-decoration: none !important;" %>
+				<%= link_to "MY CLEANERS", "#", :style => "padding:10px 15px;font-family: futura;font-size: 13px;font-weight: bold;color: #e6bc3d;text-decoration: none !important;" %>
 			</li>
 			<% end %>
 			<li style="float:right;padding: 0 15px 0 0">
-					<%= link_to "Home", root_path, :style => "padding:10px 15px;font-family: verdana, arial, helvetica, sans-serif;font-size: 13px;font-weight: bold;color: #f2f2f2;text-decoration: none !important;" %>
+					<%= link_to "COMMERCIAL", '/commercial/home', :style => "padding:10px 15px;font-family: futura;font-size: 13px;font-weight: bold;color: #e6bc3d;text-decoration: none !important;" %>
 			</li>
+			
+			<li style="float:right;padding: 0 15px 0 0">
+					<%= link_to "RESIDENTIAL", '/emil/home', :style => "padding:10px 15px;font-family: futura;font-size: 13px;font-weight: bold;color: #e6bc3d;text-decoration: none !important;" %>
+			</li>
+			
+			<li style="float:right;padding: 0 15px 0 0">
+					<%= link_to "CONSULTING", '/consulting/home', :style => "padding:10px 15px;font-family: futura;font-size: 13px;font-weight: bold;color: #e6bc3d;text-decoration: none !important;" %>
+			</li>
+			
+			<li style="float:right;padding: 0 15px 0 0">
+					<%= link_to "INQUIRE", '/inquire/home', :style => "padding:10px 15px;font-family: futura;font-size: 13px;font-weight: bold;color: #e6bc3d;text-decoration: none !important;", :class=>"side-link" %>			
+			</li>
+			
+			
 		</ul>
-	</div>
+	</div>	
 </nav>
