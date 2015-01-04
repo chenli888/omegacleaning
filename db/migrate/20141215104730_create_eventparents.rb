@@ -1,9 +1,9 @@
-class CreateEvents < ActiveRecord::Migration
+class CreateEventparents < ActiveRecord::Migration
   def change
-    create_table :events do |t|
+    create_table :eventparents do |t|
       t.belongs_to :company
-      t.datetime :start_time
-      t.datetime :end_time
+      t.datetime :first_date
+      t.datetime :last_date
       t.integer :start_hour
       t.integer :end_hour
       t.string :title

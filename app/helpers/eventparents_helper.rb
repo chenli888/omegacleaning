@@ -1,0 +1,2 @@
+module EventparentsHelper
+end

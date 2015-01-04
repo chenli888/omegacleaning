@@ -24,10 +24,7 @@ $(document).ready(function() {
     $('#calendar').fullCalendar({
     		eventSources: [{
     			url: '/companies/'+id
-    		}],
-    		eventRender: function(event, element) {
-    			element.find('.fc-event-title').text('lichen');
-    		}
+    		}]
         // put your options and callbacks here
     });
 

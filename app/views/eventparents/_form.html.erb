@@ -1,0 +1,51 @@
+<div>
+<%= form_for(@eventparent) do |f| %>
+  <% if @eventparent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@eventparent.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @eventparent.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= f.label :title, style: "padding-left:3px;" %><br>
+    <%= f.text_field :title, style: "width: 100% !important;padding: 8px 10px 7px;", value: "title"%>
+  </div>
+  <br/>
+  <div>
+    <%= f.label :first_date, style: "padding-left:3px;" %><br>
+    <%= f.date_select :first_date, style: "width: 100% !important;padding: 8px 10px 7px;" %>
+  </div>
+  <br/>
+  <div>
+    <%= f.label :last_date, style: "padding-left:3px;" %><br>
+    <%= f.date_select :last_date, style: "width: 100% !important;padding: 8px 10px 7px;" %>
+  </div>
+  <br/>
+  <div>
+  	<%= f.label :start_at, style: "float: left; padding-right: 5px;" %>
+  	<%= f.text_field :start_hour, style: "width: 15px; float: left; padding-right: 4px; margin-right: 5px;" %>
+  	<label style="float: left; padding-right: 5px;">o'clock</label>
+  </div>
+  <br/>
+  <br/>
+  <div style="margin-bottom: 10px;">
+  	<%= f.label :finish_at, style: "float: left; padding-right: 5px;" %>
+  	<%= f.text_field :end_hour, style: "width: 15px; float: left; padding-right: 4px; margin-right: 5px;" %>
+  	<label style="float: left; padding-right: 5px;">o'clock</label>
+  </div>
+  <br/>
+  <div>
+  	<%= f.label :company %>
+  	<%= f.collection_select :company_id, @companies, :id, :username %>
+  </div>
+  <br/>
+  <div class="actions">
+    <%= f.submit "Create", style: "border-radius: 200px;font-weight: bold;padding: 7px 16px 6px;background: -webkit-linear-gradient(-90deg, #838a90, #414549);border: solid 1px #484e53;color: #efefef;cursor: pointer;" %>
+  </div>
+<% end %>
+</div>
